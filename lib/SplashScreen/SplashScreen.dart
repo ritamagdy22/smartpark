@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartpark/Register/Register.dart';
+import 'package:smartpark/RegisterScreen/Register.dart';
 
 class SplashScreen extends StatelessWidget {
   static const routename="SplashScreen";

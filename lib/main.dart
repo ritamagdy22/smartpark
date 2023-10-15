@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartpark/Register/Register.dart';
+import 'package:smartpark/RegisterScreen/Register.dart';
 import 'package:smartpark/SplashScreen/SplashScreen.dart';
 
 void main(){
@@ -13,11 +13,10 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.routename,
 
+
       routes: {
         SplashScreen.routename:(context)=>SplashScreen(),
-        RegisterScreen.RouteName:(context)=>RegisterScreen()
-
-
+       RegisterScreen.RouteName:(context)=>RegisterScreen()
       },
 
     );
