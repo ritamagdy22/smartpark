@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smartpark/RegisterScreen/ParkingPlaces.dart';
 
-class RegisterScreen extends StatelessWidget {
-  static const RouteName = "RegisterScreen";
+class WelcomeScreen extends StatelessWidget {
+  static const RouteName = "WelcomeScreen";
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +27,21 @@ class RegisterScreen extends StatelessWidget {
                 fontSize: 15),
           ),
           SizedBox(height: 60),
-          ElevatedButton(onPressed: (){},style:
-          ButtonStyle(
+          ElevatedButton(onPressed: (){
+            Navigator.of(context).pushNamed(ParkingPlaces.RouteName);
+            
+          },
+
+              style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.black),
             minimumSize: MaterialStateProperty.all(Size(370, 50)),
 
           ),
 
               child: Text("Next",
-
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white,
+                fontSize: 25
+                ),
               ))
         ],
       ),

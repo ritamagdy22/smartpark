@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartpark/RegisterScreen/Register.dart';
+import 'package:smartpark/RegisterScreen/WelcomeScreen.dart';
 
 class SplashScreen extends StatelessWidget {
   static const routename="SplashScreen";
@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushNamed(RegisterScreen.RouteName);
+      Navigator.of(context).pushNamed(WelcomeScreen.RouteName);
 
     });
 
