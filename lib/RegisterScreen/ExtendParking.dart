@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/LoginScreen.dart';
 
 class ExtendParking extends StatelessWidget {
-
-  static const RouteName ="ExtendParking";
+  static const RouteName = "ExtendParking";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-
         children: [
           Center(
             child: Container(
@@ -19,7 +17,9 @@ class ExtendParking extends StatelessWidget {
                   children: [
                     Padding(padding: EdgeInsets.all(70)),
                     Image.asset('assets/images/ExtendParking.png'),
-                    SizedBox(height: 70,),
+                    SizedBox(
+                      height: 70,
+                    ),
                     Image.asset("assets/images/TextExtendParkingTime.png"),
                   ],
                 ),
@@ -31,7 +31,8 @@ class ExtendParking extends StatelessWidget {
             right: 0,
             child: TextButton(
               onPressed: () {
-                // Handle the action when the "Skip" button is pressed.
+
+
               },
               child: Text(
                 "Skip",
@@ -48,6 +49,7 @@ class ExtendParking extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
 
+                Navigator.of(context).pushNamed(LoginScreen.RouteName);
 
               },
               style: ButtonStyle(

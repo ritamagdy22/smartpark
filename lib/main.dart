@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/LoginScreen.dart';
 import 'package:smartpark/RegisterScreen/BookAndPay.dart';
 import 'package:smartpark/RegisterScreen/ExtendParking.dart';
 import 'package:smartpark/RegisterScreen/ParkingPlaces.dart';
@@ -19,10 +20,11 @@ class MyApp extends StatelessWidget{
 
       routes: {
         SplashScreen.routename:(context)=>SplashScreen(),
-       WelcomeScreen.RouteName:(context)=>WelcomeScreen(),
+        WelcomeScreen.RouteName:(context)=>WelcomeScreen(),
         ParkingPlaces.RouteName:(context)=>ParkingPlaces(),
         BookAndPay.RouteName:(context)=>BookAndPay(),
-        ExtendParking.RouteName:(context)=>ExtendParking()
+        ExtendParking.RouteName:(context)=>ExtendParking(),
+        LoginScreen.RouteName:(context)=>LoginScreen()
 
       },
 
