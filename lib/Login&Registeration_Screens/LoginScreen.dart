@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/ForgetPassword.dart';
+import 'package:smartpark/Login&Registeration_Screens/SignInScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const RouteName = "LoginScreen";
@@ -9,7 +11,6 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   String email = '';
-
   String password = '';
 
   @override
@@ -91,7 +92,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
 
             SizedBox(height: 20,),
-            Text("Forget Password ?"),
+            Container(child:
+            InkWell(
+              onTap: (){
+                Navigator.of(context).pushNamed(ForgetPAssword.RouteName);
+              },
+                child: Text("Forget Password ?"),),),
 
             Row(
               children: [
@@ -102,7 +108,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
-                    //signup screen
+
+                    Navigator.of(context).pushNamed(SignInScreen.RouteName);
+
                   },
                 )
               ],

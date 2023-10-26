@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/ForgetPassword.dart';
 import 'package:smartpark/Login&Registeration_Screens/LoginScreen.dart';
+import 'package:smartpark/Login&Registeration_Screens/SignInScreen.dart';
 import 'package:smartpark/RegisterScreen/BookAndPay.dart';
 import 'package:smartpark/RegisterScreen/ExtendParking.dart';
 import 'package:smartpark/RegisterScreen/ParkingPlaces.dart';
@@ -24,7 +26,10 @@ class MyApp extends StatelessWidget{
         ParkingPlaces.RouteName:(context)=>ParkingPlaces(),
         BookAndPay.RouteName:(context)=>BookAndPay(),
         ExtendParking.RouteName:(context)=>ExtendParking(),
-        LoginScreen.RouteName:(context)=>LoginScreen()
+        LoginScreen.RouteName:(context)=>LoginScreen(),
+        SignInScreen.RouteName:(context)=>SignInScreen(),
+        ForgetPAssword.RouteName:(context)=>ForgetPAssword()
+
 
       },
 
