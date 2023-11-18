@@ -116,10 +116,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
-
-
-
-
           ],
         ),
       ),

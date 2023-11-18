@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smartpark/RegisterScreen/BookAndPay.dart';
 
+import '../Login&Registeration_Screens/LoginScreen.dart';
+
 class ParkingPlaces extends StatelessWidget {
   static const RouteName = 'ParkingPlace';
 
@@ -25,6 +27,8 @@ class ParkingPlaces extends StatelessWidget {
             right: 0,
             child: TextButton(
               onPressed: () {
+                Navigator.of(context).pushNamed(LoginScreen.RouteName);
+
                 // Handle the action when the "Skip" button is pressed.
               },
               child: Text(

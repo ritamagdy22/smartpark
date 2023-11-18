@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/Fill_Your_Information.dart';
 
 class SignInScreen extends StatefulWidget {
   static const RouteName = "SignInScreen";
@@ -94,6 +95,9 @@ class _SignInScreenState extends State<SignInScreen> {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
+
+             Navigator.pushNamed(context, FillYourInformation.RouteName);
+
               // Perform login logic here using the email and password
               print('Email: $email, Password: $password');
             },

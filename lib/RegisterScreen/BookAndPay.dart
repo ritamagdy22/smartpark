@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/LoginScreen.dart';
 import 'package:smartpark/RegisterScreen/ExtendParking.dart';
 
 class BookAndPay extends StatelessWidget {
@@ -32,6 +33,8 @@ class BookAndPay extends StatelessWidget {
               right: 0,
               child: TextButton(
                 onPressed: () {
+
+                  Navigator.of(context).pushNamed(LoginScreen.RouteName);
                   // Handle the action when the "Skip" button is pressed.
                 },
                 child: Text(
