@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpark/Login&Registeration_Screens/Fill_Your_Information.dart';
 import 'package:smartpark/Login&Registeration_Screens/ForgetPassword.dart';
 import 'package:smartpark/Login&Registeration_Screens/SignInScreen.dart';
 
@@ -109,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
 
-                    Navigator.of(context).pushNamed(SignInScreen.RouteName);
+                    Navigator.of(context).pushNamed(FillYourInformation.RouteName);
 
                   },
                 )

@@ -10,7 +10,8 @@ class FormLabelWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       Label,
-      style: TextStyle(fontSize: 24,color: Colors.black87),
+      style: TextStyle(fontSize: 20,color: Colors.black87,
+      fontWeight:FontWeight.bold),
 
     );
   }

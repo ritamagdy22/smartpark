@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget{
         BookAndPay.RouteName:(context)=>BookAndPay(),
         ExtendParking.RouteName:(context)=>ExtendParking(),
         LoginScreen.RouteName:(context)=>LoginScreen(),
-        SignInScreen.RouteName:(context)=>SignInScreen(),
         ForgetPAssword.RouteName:(context)=>ForgetPAssword(),
         FillYourInformation.RouteName:(context)=>FillYourInformation()
 
@@ -38,3 +37,5 @@ class MyApp extends StatelessWidget{
     );
   }
 }
+
+//        FillYourInformation.RouteName:(context)=>SignInScreen(),
