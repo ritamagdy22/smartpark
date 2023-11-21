@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:smartpark/Login&Registeration_Screens/Fill_Your_Information.dart';
-import 'package:smartpark/Login&Registeration_Screens/ForgetPassword.dart';
-import 'package:smartpark/Login&Registeration_Screens/SignInScreen.dart';
+import '../widget/Form_Label_Widget.dart';
+import '../widget/custom_Text_FormField.dart';
+import 'ForgetPassword.dart';
 
 class LoginScreen extends StatefulWidget {
   static const RouteName = "LoginScreen";
 
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
-
 class _LoginScreenState extends State<LoginScreen> {
-  String email = '';
-  String password = '';
+
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
+  final formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,96 +33,113 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          // Align children at the top
-          children: [
-            Padding(
-              padding:
-                  EdgeInsets.only(top: 100), // Adjust the top space as needed
-            ),
-            Image.asset('assets/images/LoginText.png'),
-            SizedBox(
-              height: 35,
-            ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Email',
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
-                labelStyle: TextStyle(
-                  fontWeight: FontWeight.bold, // Make the label text bold
-                  fontSize: 25, // Set the font size for the label
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+            SizedBox(height: 10, width: 10,),
+          Image.asset('assets/images/LoginText.png'),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SingleChildScrollView(
+                  child: Form(
+                    key: formkey,
+                    child: Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                        SizedBox(height: 30, width: 10,),
+                      FormLabelWidget(Label: "Email Address"),
+                      SizedBox(height: 10, width: 10,),
+                      CustomTextFormField(
+                          Type: TextInputType.emailAddress,
+                          validator: (text) {
+                            if (text == null || text
+                                .trim()
+                                .isEmpty) {
+                              return "Please Enter your Email";
+                            }
+                            var emailvalid = RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                .hasMatch(text);
+                            if (!emailvalid) {
+                              return "Email not valid";
+                            }
+                          },
+                          controller: emailcontroller,
+                          hintText: "Please Enter Your Email"),
+                      SizedBox(height: 20, width: 10,),
+                      FormLabelWidget(Label: "Password"),
+                      SizedBox(height: 10, width: 10,),
+                      CustomTextFormField(
+                          Type: TextInputType.visiblePassword,
+                          validator: (text) {
+                            if (text == null || text
+                                .trim()
+                                .isEmpty) {
+                              return "Please Enter your Password";
+                            }
+                            if (text.length < 6) {
+                              return " Phone number must be more than 6 charc.";
+                            }
+                          },
+                          controller: passwordcontroller,
+                          hintText: "Please Enter your Password"),
+                      SizedBox(height: 20, width: 10,),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, FillYourInformation.RouteName);
+                        },
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              Colors.black),
+                          minimumSize: MaterialStateProperty.all(
+                              Size(370, 50)),
+                        ),
+                        child: Text('Login'),
+                      ),
+                      SizedBox(height: 20,),
+                      Container(child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(
+                              ForgetPAssword.RouteName);
+                        },
+                        child: Text("Forget Password ?"),
+                      ),),
+                      Row(children: [
+                        const Text('Does not have account?'),
+                        TextButton(
+                          child: const Text(
+                            'Sign in',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(
+                                FillYourInformation.RouteName);
+                          },
+
+                        )
+                      ],
+
+                        mainAxisAlignment: MainAxisAlignment.center,
+
+                      ),
+                      ]
+                    ),
+                  )
+
               ),
-              onChanged: (value) {
-                setState(() {
-                  email = value;
-                });
-              },
             ),
-            SizedBox(
-              height: 35,
-            ),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
-                labelStyle: TextStyle(
-                  fontWeight: FontWeight.bold, // Make the label text bold
-                  fontSize: 25, // Set the font size for the label
-                ),
-              ),
-              onChanged: (value) {
-                setState(() {
-                  password = value;
-                });
-              },
-            ),
-            SizedBox(height: 60),
-
-            ElevatedButton(
-              onPressed: () {
-                // Perform login logic here using the email and password
-                print('Email: $email, Password: $password');
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.black),
-                minimumSize: MaterialStateProperty.all(Size(370, 50)),
-              ),
-              child: Text('Login'),
-            ),
-
-            SizedBox(height: 20,),
-            Container(child:
-            InkWell(
-              onTap: (){
-                Navigator.of(context).pushNamed(ForgetPAssword.RouteName);
-              },
-                child: Text("Forget Password ?"),),),
-
-            Row(
-              children: [
-                const Text('Does not have account?'),
-                TextButton(
-                  child: const Text(
-                    'Sign in',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  onPressed: () {
-
-                    Navigator.of(context).pushNamed(FillYourInformation.RouteName);
-
-                  },
-                )
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-          ],
-        ),
+          ),
+        )
+        ],
       ),
+    ),)
+    ,
     );
   }
 }
+
+
