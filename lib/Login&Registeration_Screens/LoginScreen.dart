@@ -113,7 +113,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextButton(
                           child: const Text(
                             'Sign in',
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 20,
+                            color: Colors.red
+                            ),
                           ),
                           onPressed: () {
                             Navigator.of(context).pushNamed(

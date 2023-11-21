@@ -46,7 +46,7 @@ class FillYourInformation extends StatelessWidget {
                  crossAxisAlignment: CrossAxisAlignment.stretch,
                  children: [
                    SizedBox(height: 30,width: 10,),
-                  FormLabelWidget(Label: "Name"),
+                   FormLabelWidget(Label: "Name"),
                    SizedBox(height: 10,width: 10,),
                    CustomTextFormField(
                        Type: TextInputType.name,
@@ -130,10 +130,8 @@ class FillYourInformation extends StatelessWidget {
                        backgroundColor: MaterialStateProperty.all(Colors.black),
                        minimumSize: MaterialStateProperty.all(Size(370, 50)),
                      ),
-                     child: Text('Sign Up'),
+                     child: Text('Continue'),
                    ),
-
-
 
                  ],
                ),
