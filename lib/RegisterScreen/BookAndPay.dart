@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartpark/Login&Registeration_Screens/LoginScreen.dart';
 import 'package:smartpark/RegisterScreen/ExtendParking.dart';
+
+import '../UI/LoginScreen.dart';
 
 class BookAndPay extends StatelessWidget {
 

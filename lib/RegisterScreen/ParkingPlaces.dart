@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartpark/RegisterScreen/BookAndPay.dart';
 
-import '../Login&Registeration_Screens/LoginScreen.dart';
+import '../UI/LoginScreen.dart';
 
 class ParkingPlaces extends StatelessWidget {
   static const RouteName = 'ParkingPlace';

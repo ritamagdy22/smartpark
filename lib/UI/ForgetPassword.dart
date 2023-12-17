@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpark/ForgetPassword/Forget_password_PhoneNumber.dart';
 
 class ForgetPAssword extends StatelessWidget {
   static const RouteName = "ForgetPassword";
@@ -43,7 +44,8 @@ class ForgetPAssword extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20), // Adjust horizontal padding as needed
             child: ElevatedButton(
               onPressed: () {
-                // phone number route
+             Navigator.of(context).pushNamed( ForgetPasswordByPhoneNumber.routename);
+
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.white60),
@@ -87,7 +89,7 @@ class ForgetPAssword extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20), // Adjust horizontal padding as needed
             child: ElevatedButton(
               onPressed: () {
-                // email address route
+                // email
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.white60),
